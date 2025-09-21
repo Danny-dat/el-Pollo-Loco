@@ -140,16 +140,21 @@ class World extends WorldTwo {
     /**
      * Checks for collisions between game elements.
      */
-    checkCollisions() {
-        if (this.isTheEndbossCollidingCharacter(this.character)) {
-            this.characterReceivesHit();
-            this.character.energy -= 20;
-            this.characterCheckForEnergy();
-        };
-        this.thrownBottles();
-        this.coinStatus();
-        this.bottleValueStatus();
+checkCollisions() {
+    // Prüfen, ob der Charakter den Endgegner erreicht hat
+    if (this.character.x > 1600 && !this.level.endboss[0].hadFirstContact) {
+        this.level.endboss[0].hadFirstContact = true;
     }
+
+    if (this.isTheEndbossCollidingCharacter(this.character)) {
+        this.characterReceivesHit();
+        this.character.energy -= 20;
+        this.characterCheckForEnergy();
+    };
+    this.thrownBottles();
+    this.coinStatus();
+    this.bottleValueStatus();
+}
 
     /**
      * Checks for collisions between the character and coins. 
@@ -371,34 +376,43 @@ class World extends WorldTwo {
         this.throwableObject.splice(index, 1);
     }
 
-    draw() {
-        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
-        this.ctx.translate(this.camera_x, 0);
-        this.addObjectsToMap(this.level.backgroundObjects);
 
-        this.ctx.translate(-this.camera_x, 0);
-        this.addToMap(this.stadusBar);
-        this.addToMap(this.coinBar);
-        this.addToMap(this.bottleBar);
+
+draw() {
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    this.ctx.translate(this.camera_x, 0);
+    this.addObjectsToMap(this.level.backgroundObjects);
+
+    this.addObjectsToMap(this.level.clouds);
+    this.addObjectsToMap(this.level.bottle);
+
+    this.ctx.translate(-this.camera_x, 0);
+    this.addToMap(this.stadusBar);
+    this.addToMap(this.coinBar);
+    this.addToMap(this.bottleBar);
+    
+    // Lebensanzeige des Bosses nur anzeigen, wenn der Kampf begonnen hat
+    if (this.level.endboss[0] && this.level.endboss[0].hadFirstContact) { // Hier wurde es geändert
         this.addToMap(this.bossBar);
-        this.ctx.translate(this.camera_x, 0);
-
-        this.addToMap(this.character);
-
-        this.addObjectsToMap(this.level.bottle);
-        this.addObjectsToMap(this.level.coin);
-        this.addObjectsToMap(this.level.clouds);
-        this.addObjectsToMap(this.level.enemies);
-        this.addObjectsToMap(this.level.endboss);
-        this.addObjectsToMap(this.level.smallChicken);
-        this.addObjectsToMap(this.throwableObject);
-        this.ctx.translate(-this.camera_x, 0);
-
-        let self = this;
-        requestAnimationFrame(function () {
-            self.draw();
-        });
     }
+    
+    this.ctx.translate(this.camera_x, 0);
+
+    this.addToMap(this.character);
+
+    this.addObjectsToMap(this.level.coin);
+    this.addObjectsToMap(this.level.enemies);
+    this.addObjectsToMap(this.level.endboss);
+    this.addObjectsToMap(this.level.smallChicken);
+    this.addObjectsToMap(this.throwableObject);
+    
+    this.ctx.translate(-this.camera_x, 0);
+
+    let self = this;
+    requestAnimationFrame(function () {
+        self.draw();
+    });
+}
 
     addObjectsToMap(objects) {
         objects.forEach(o => {
