@@ -3,6 +3,7 @@ class Endboss extends MovableObject {
     width = 400;
     y = 50;
     firstContact = false;
+   
 
     IMAGES_ALERT = ['img/4_enemie_boss_chicken/2_alert/G5.png',
         'img/4_enemie_boss_chicken/2_alert/G6.png',
@@ -54,7 +55,7 @@ class Endboss extends MovableObject {
         this.loadImages(this.IMAGES_HURT);
         this.loadImages(this.IMAGES_ATTACK);
         this.x = 2100;
-        this.speed = 40;
+        this.speed = 4;
         this.animate();
     }
 
@@ -62,12 +63,20 @@ class Endboss extends MovableObject {
     * Initiates the animation loop.
     * Checks the sound status and updates boss animation every 250 milliseconds.
     */
-    animate() {
+      animate() {
+        // Intervall für die Bewegung (sehr schnell für flüssige Bewegung)
+        setInterval(() => {
+            if (this.hadFirstContact) { // Boss bewegt sich nur nach dem ersten Kontakt
+                this.bossRanUntiltheEnd();
+            }
+        }, 1000 / 60); // Führt die Bewegung 60 mal pro Sekunde aus
+
+        // Intervall für die Animation und Sounds (langsamer ist hier in Ordnung)
         setInterval(() => {
             this.checkMexicoSound();
             this.checkFinalBossSound();
             this.bossAnimation();
-        }, 250);
+        }, 200); // Animationen und Sounds laufen wie gewohnt weiter
     }
 
     /**

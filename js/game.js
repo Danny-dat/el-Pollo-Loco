@@ -10,7 +10,7 @@ let isVolumeOn;
  */
 function init() {
     canvas = document.getElementById('canvas');
-    
+    lautSound();
 }
 
 /**
@@ -23,8 +23,9 @@ function start() {
     closInfo();
     initLevel();
     mobilRun();
-    lautSound();
+   
     world = new World(canvas, keybord);  
+     world.sound = !isVolumeOn;
 }
 
 /**
@@ -175,10 +176,14 @@ function volume() {
     let volume = document.getElementById('volume');
     if (isVolumeOn) {
         volume.src = 'img/lautsprecher.png';
-        world.sound = true;
+        if (world) { // Hinzugefügte Prüfung
+            world.sound = true;
+        }
     } else {
         volume.src = 'img/stumm.png';
-        world.sound = false;
+        if (world) { // Hinzugefügte Prüfung
+            world.sound = false;
+        }
     }
     isVolumeOn = !isVolumeOn;
 }

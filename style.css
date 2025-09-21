@@ -20,7 +20,7 @@ canvas {
 
 h1 {
     font-size: 50px;
-    font-family: "Playwrite MX"; cursive;
+    font-family: "Playwrite MX", cursive;
     
 }
 
@@ -192,6 +192,7 @@ text {
     position: absolute;
     top: 10px;
     right: 10px;
+    z-index: 2;
 }
 
 .info button:hover {
