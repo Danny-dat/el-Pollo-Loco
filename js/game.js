@@ -36,6 +36,21 @@ function reStart() {
     window.location.reload();
 }
 
+/**
+ * Restarts the game directly without reloading the page.
+ */
+function restartGame() {
+    // Verstecke den Sieges- und den Game-Over-Bildschirm
+    document.getElementById('nextLevel').style.display = 'none';
+    document.getElementById('gameOver').style.display = 'none';
+
+    // Beende alle alten Spiel-Prozesse
+    clearAllIntervals();
+
+    // Starte ein komplett neues Spiel
+    start();
+}
+
 function lautSound(){
     let volume = document.getElementById('volume');
     volume.src = 'img/lautsprecher.png';
