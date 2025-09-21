@@ -101,7 +101,7 @@ class Character extends MovableObject {
             this.world.camera_x = -this.x + 100;
         }, 1000 / 60);
 
-        setInterval(() => this.playCharacter(), 150);
+        setInterval(() => this.playCharacter(), 100);
     }
 
     /**
@@ -188,7 +188,7 @@ class Character extends MovableObject {
      */
     characterStand() {
         this.playAnimation(this.IMAGES_STAND);
-        if (Date.now() - this.lastMovementTime >= 5000) {
+        if (Date.now() - this.lastMovementTime >= 10000) {
             this.playAnimation(this.IMAGES_LONGSTAND);
             this.sleepSound();
         }
@@ -256,6 +256,8 @@ class Character extends MovableObject {
             this.jump_sound.play();
         }
         this.jump();
+        this.lastMovementTime = Date.now(); 
+        this.sleep_sound.pause();
     }
 
     /**

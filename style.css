@@ -3,7 +3,7 @@ body {
     flex-direction: column;
     align-items: center;
     font-family: 'Permanent Marker', cursive;
-    background-image: url('img/wueste.jpg');
+    background-image: url('/img/wueste.jpg');
     background-position: center;
     background-size: cover;
     height: 100vh;
