@@ -2,6 +2,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     font-family: 'Permanent Marker', cursive;
     background-image: url('/img/wueste.jpg');
     background-position: center;
@@ -22,6 +23,9 @@ h1 {
     font-size: 50px;
     font-family: "Playwrite MX", cursive;
     font-weight: bold;
+    margin-bottom: 80px;
+    color: White;
+    text-shadow: 2px 2px 4px black;
     
 }
 
@@ -152,6 +156,7 @@ h1 {
 
 .container {
     position: relative;
+    transform: scale(1.2);
 }
 
 button img {
@@ -251,7 +256,7 @@ text {
 
 .Bottom-links a {
     font-family: 'Permanent Marker', cursive; /* Gleiche Schriftart wie im Spiel */
-    font-size: 18px; /* Passe die Größe nach Belieben an */
+    font-size: 32px; /* Passe die Größe nach Belieben an */
     color: white; /* Schriftfarbe, damit sie gut lesbar ist */
     text-decoration: none; /* Entfernt den Unterstrich */
     text-shadow: 2px 2px 4px black; /* Fügt einen leichten Schatten für bessere Lesbarkeit hinzu */
