@@ -21,6 +21,7 @@ canvas {
 h1 {
     font-size: 50px;
     font-family: "Playwrite MX", cursive;
+    font-weight: bold;
     
 }
 
@@ -240,6 +241,24 @@ text {
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; /* Standard-Syntax */
+}
+.Bottom-links {
+    position: absolute;
+    bottom: 5px; /* Abstand vom unteren Rand des Spiel-Containers */
+    width: 100%; /* Sorgt dafür, dass der Container die volle Breite hat */
+    text-align: center; /* Zentriert den Link innerhalb des Containers */
+}
+
+.Bottom-links a {
+    font-family: 'Permanent Marker', cursive; /* Gleiche Schriftart wie im Spiel */
+    font-size: 18px; /* Passe die Größe nach Belieben an */
+    color: white; /* Schriftfarbe, damit sie gut lesbar ist */
+    text-decoration: none; /* Entfernt den Unterstrich */
+    text-shadow: 2px 2px 4px black; /* Fügt einen leichten Schatten für bessere Lesbarkeit hinzu */
+}
+
+.Bottom-links a:hover {
+    color: yellow; /* Ändert die Farbe, wenn man mit der Maus darüberfährt */
 }
 @media(max-width: 950px) {
     h1 {
