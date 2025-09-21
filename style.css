@@ -156,7 +156,7 @@ h1 {
 
 .container {
     position: relative;
-    transform: scale(1.2);
+ 
 }
 
 button img {
@@ -302,5 +302,11 @@ text {
     .gameOver {
         height: 100vh;
         font-size: 25px;
+    }
+}
+
+@media (min-width: 901px) {
+    .container {
+        transform: scale(1.2);
     }
 }
