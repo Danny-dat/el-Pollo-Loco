@@ -1,0 +1,281 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Permanent Marker', cursive;
+    background-image: url('img/wueste.jpg');
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+canvas {
+    background-color: black;
+    display: block;
+
+}
+
+h1 {
+    font-size: 50px;
+    font-family: "Playwrite MX"; cursive;
+    
+}
+
+.start {
+    width: 100%;
+    height: 100%;
+    max-width: 720px;
+    max-height: 480px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.startPolloLoco {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.over {
+    width: 720px;
+    height: 480px;
+    position: absolute;
+    top: 0px;
+    background-color: black;
+}
+
+.gameOver {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.gameOver img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    max-width: 720px;
+    max-height: 480px;
+}
+
+.startButton {
+    font-size: 50px;
+    font-family: 'Permanent Marker', cursive;
+    background-color: yellow;
+    border-radius: 10px;
+    transition: font-size 0.5s ease-in-out, background-color 0.5s ease-in-out;
+    cursor: pointer;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.startButton:hover {
+    font-size: 60px;
+    background-color: rgb(208, 255, 0);
+}
+
+.nextGamePolloLoco {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: none;
+}
+
+.nextGamePolloLoco img {
+    height: 100%;
+    width: 100%;
+}
+
+.next {
+    font-size: 20px;
+    font-family: 'Permanent Marker', cursive;
+    border-radius: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 15%;
+    left: 38%;
+    right: 38%;
+    z-index: 1;
+    background-color: grey;
+}
+
+.next p {
+    font-size: 15px;
+}
+
+.neustart {
+    position: absolute;
+    bottom: 10%;
+    left: 37%;
+    right: 37%;
+    font-size: 30px;
+    border-radius: 10px;
+    font-family: 'Permanent Marker', cursive;
+    background-color: yellow;
+    transition: font-size 0.5s ease-in-out, background-color 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+
+.neustart:hover {
+    font-size: 40px;
+    background-color: rgb(208, 255, 0);
+}
+
+.mobileButten {
+    height: 50px;
+    width: 50px;
+    background-color: yellow;
+    border-radius: 30px;
+    font-size: 40px;
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    bottom: 10px;
+    gap: 20px;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    position: relative;
+}
+
+button img {
+    height: 50px;
+    width: 50px;
+    text-align: center;
+}
+
+.mobileKeys {
+    position: absolute;
+    left: 10px;
+    display: flex;
+    gap: 60px;
+}
+
+.mobileKeysTwo {
+    position: absolute;
+    right: 60px;
+    gap: 20px;
+    display: flex;
+    gap: 65px;
+}
+
+
+.mobileButten:hover {
+    background-color: rgb(208, 255, 0);
+}
+
+text {
+    position: absolute;
+}
+
+.info img {
+    height: 35px;
+    cursor: pointer;
+}
+
+.info {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.info button:hover {
+    background-color: rgb(208, 255, 0);
+    cursor: pointer;
+}
+
+.infoNote {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 10px;
+    border: 1px solid black;
+    background-color: lightgray;
+    border-radius: 20px;
+    height: auto;
+    z-index: 2;
+    /* Stelle sicher, dass die Infonotiz über dem Canvas liegt */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+}
+
+.handy img {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    z-index: 3;
+}
+
+.volume {
+    position: absolute;
+    right: 40px;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+}
+.no-select {
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Standard-Syntax */
+}
+@media(max-width: 950px) {
+    h1 {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+
+    canvas,
+    .start,
+    .over,
+    .gameOver {
+        width: 100%;
+    }
+
+    .startButton,
+    .neustart {
+        font-size: 25px;
+    }
+
+    .startButton:hover {
+        font-size: 30px;
+    }
+
+    .neustart:hover {
+        font-size: 30px;
+    }
+}
+
+@media only screen and (max-height: 480px) {
+
+    canvas,
+    .start,
+    .over,
+    .gameOver {
+        height: 100vh;
+        font-size: 25px;
+    }
+}

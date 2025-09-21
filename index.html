@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<html translate="no">
+<!---it´s me Danny -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EL POLLO LOCO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+MX:wght@100..400&display=swap" rel="stylesheet">
+    <script src="models/drawable-object.class.js"></script>
+    <script src="models/movable-object.class.js"></script>
+    <script src="models/character.class.js"></script>
+    <script src="models/chicken.class.js"></script>
+    <script src="models/cloud.class.js"></script>
+    <script src="models/coin-bar.class.js"></script>
+    <script src="models/status-bar.class.js"></script>
+    <script src="models/bottle-bar.class.js"></script>
+    <script src="models/boss-bar.class.js"></script>
+    <script src="models/worldTwo.class.js"></script>
+    <script src="models/world.class.js"></script>
+    <script src="models/coin.class.js"></script>
+    <script src="models/bottle.class.js"></script>
+    <script src="models/backround-object.class.js"></script>
+    <script src="models/keyboard.class.js"></script>
+    <script src="models/level.class.js"></script>
+    <script src="models/throwable-object.class.js"></script>
+    <script src="models/endboss.class.js"></script>
+    <script src="models/smallChicken.class.js"></script>
+    <script src="levels/level1.js"></script>
+    <script src="js/game.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body onload="init()">
+    <h1>EL POLLO LOCO</h1>
+     <link rel="icon" href="./img/kopf.png">
+    <div class="container" id="game-container">
+        <canvas id="canvas" width="720px" height="480px"></canvas>
+        <div class="infoNote" id="infoNote">
+            <span>PRESS D = THROW BOTTLE</span>
+            <span>PRESS SPACE = JUMP</span>
+            <span>PRESS -> = RUN RIGHT</span>
+            <span> PRESS &lt;- = RUN LEFT</span>
+        </div>
+        <!-- <button class="fullscreenButton" onclick="enableFullscreen()">Fullscreen</button> -->
+        <div class="info">
+            <img onclick="infoNote()" src="img/mouse-and-keyboard-8938335_640.png">
+            <img class="volume" id="volume" onclick="volume()" src="img/lautsprecher.png">
+        </div>
+
+        <div class="mobileKeysNone no-select" id="mobileKeysNone">
+            <div class="mobileKeys">
+                <div><button id="left" class="mobileButten"> &lt; </button></div>
+                <div><button id="right" class="mobileButten"> ></button></div>
+            </div>
+            <div class="mobileKeysTwo">
+                <div><button id="jump" class="mobileButten"> ^ </button></div>
+                <div><button id="throw" class="mobileButten"> <img src="img/6_salsa_bottle/salsa_bottle.png"
+                            alt=""></button></div>
+            </div>
+        </div>
+        <div id="startPolloLoco" class="startPolloLoco">
+            <button class="startButton" id="startButton" onclick="start()">START</button>
+            <img class="start" src="img/9_intro_outro_screens/start/startscreen_2.png" alt="">
+        </div>
+        <div id="gameOver" class="gameOver">
+            <button class="startButton" onclick="reStart()">RESTART</button>
+            <img class="over" src="img/9_intro_outro_screens/game_over/game over.png" alt="">
+        </div>
+       <div id="nextLevel" class="nextGamePolloLoco">
+          <!-- <button class="next">NEXT LEVEL <p> In the Future</p></button>--> 
+            <img src="img/9_intro_outro_screens/start/startscreen_1.png" alt="">
+            <button class="neustart" onclick="reStart()">RESTART</button>
+        </div>
+        <div class="handy" id="handy">
+            <img src="img/phone.png" alt="">
+        </div>
+    </div>
+</body>
+
+</html>
