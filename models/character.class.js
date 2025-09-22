@@ -73,6 +73,7 @@ class Character extends MovableObject {
     jump_sound = new Audio('audio/jump_sound.mp3');
     pains_sound = new Audio('audio/game-over-sound.mp3');
     sleep_sound = new Audio('audio/sleep.mp3');
+    hurt_sound = new Audio('audio/aua.mp3'); // NEUE ZEILE
     hasPlayedDeathSound = false;
     lastMovementTime = Date.now();
 
@@ -155,8 +156,11 @@ class Character extends MovableObject {
     /**
     * Plays the hurt animation for the character.
     */
-    playHurtAnimation() {
+     playHurtAnimation() {
         this.playAnimation(this.IMAGES_HURT);
+        if (this.world.sound) {
+            this.hurt_sound.play();
+        }
     }
 
     /**
