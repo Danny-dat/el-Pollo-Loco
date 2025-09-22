@@ -333,7 +333,7 @@ checkCollisions() {
         if (this.sound === true) {
             this.character.jump_sound.play();
         }
-        this.character.jump();
+        this.character.speedY=30;
         enemy.energy = 0;
     }
 

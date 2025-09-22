@@ -1,7 +1,7 @@
 class Character extends MovableObject {
     width = 350;
     height = 150;
-    y = 100;
+    y = 90;
     speed = 5;
     offset = {
         top: 50,
@@ -100,6 +100,7 @@ class Character extends MovableObject {
             this.moveCharacter();
             this.notThrowToTheLeft();
             this.world.camera_x = -this.x + 100;
+            
         }, 1000 / 60);
 
         setInterval(() => this.playCharacter(), 100);
