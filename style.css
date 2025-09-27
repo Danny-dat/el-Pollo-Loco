@@ -248,21 +248,26 @@ text {
     user-select: none; /* Standard-Syntax */
 }
 .Bottom-links {
-
     position: absolute;
-    bottom: 50px; /* <-- Wert erhöht, um den Link anzuheben */
-    width: 100%; 
-    text-align: center; 
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;    
 }
-
 .Bottom-links a {
   
-
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
     font-family: 'Permanent Marker', cursive; /* Gleiche Schriftart wie im Spiel */
     font-size: 32px; /* Passe die Größe nach Belieben an */
     color: white; /* Schriftfarbe, damit sie gut lesbar ist */
     text-decoration: none; /* Entfernt den Unterstrich */
-    text-shadow: 2px 2px 4px black; /* Fügt einen leichten Schatten für bessere Lesbarkeit hinzu */
+    text-shadow: 2px 2px 4px black; 
 }
 
 .Bottom-links a:hover {
@@ -312,5 +317,16 @@ text {
 @media (min-width: 901px) {
     .container {
         transform: scale(1.2);
+    }
+}@media (max-width: 945px) {
+    .Bottom-links a {
+       display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;     
+        bottom: 0;
+        left: 10px;
+        font-size: 18px;
+        color: white;
     }
 }
