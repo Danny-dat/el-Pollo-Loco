@@ -248,13 +248,16 @@ text {
     user-select: none; /* Standard-Syntax */
 }
 .Bottom-links {
+
     position: absolute;
-    bottom: 5px; /* Abstand vom unteren Rand des Spiel-Containers */
-    width: 100%; /* Sorgt dafür, dass der Container die volle Breite hat */
-    text-align: center; /* Zentriert den Link innerhalb des Containers */
+    bottom: 50px; /* <-- Wert erhöht, um den Link anzuheben */
+    width: 100%; 
+    text-align: center; 
 }
 
 .Bottom-links a {
+  
+
     font-family: 'Permanent Marker', cursive; /* Gleiche Schriftart wie im Spiel */
     font-size: 32px; /* Passe die Größe nach Belieben an */
     color: white; /* Schriftfarbe, damit sie gut lesbar ist */
@@ -303,6 +306,7 @@ text {
         height: 100vh;
         font-size: 25px;
     }
+    
 }
 
 @media (min-width: 901px) {
